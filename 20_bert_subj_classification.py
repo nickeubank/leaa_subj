@@ -19,12 +19,39 @@ from transformers import (  # AdamW,
 
 pd.set_option("mode.copy_on_write", True)
 
+############
+# Load data.
+############
+
+##########
+# Colab
+##########
+# from google.colab import drive
+# drive.mount('/content/gdrive/')
+# dir = "/content/gdrive/My Drive/leaa/"
+
+#########
+# Home
+#########
+
 dir = ""
-grants = pd.read_parquet(dir + "subj_text_and_labels.parquet")
+
+########
+# DCC
+########
+
+dir = "/hpc/group/ssri/nce8/leaa_subj"
+
+########
+# Cloud load
+########
+# dir = "https://github.com/nickeubank/leaa_subj/raw/refs/heads/main/"
 
 #########
 # Split into train test and for predict
 #########
+
+grants = pd.read_parquet(dir + "subj_text_and_labels.parquet")
 grants = grants.drop_duplicates("description")
 
 labeled = grants[grants["label_1"].notnull()]
