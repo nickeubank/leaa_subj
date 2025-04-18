@@ -28,7 +28,7 @@ pd.set_option("mode.copy_on_write", True)
 ##########
 # from google.colab import drive
 # drive.mount('/content/gdrive/')
-# dir = "/content/gdrive/My Drive/leaa/"
+# dir = "/content/gdrive/MyDrive/leaa/"
 
 #########
 # Home
